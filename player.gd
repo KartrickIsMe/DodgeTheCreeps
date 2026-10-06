@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	
 	if velocity.x != 0:
 		animator.animation = "walk"
-		animator.flip_v = false
+		animator.flip_h = false
 		animator.flip_h = velocity.x < 0
 
 	elif velocity.y != 0:
@@ -38,14 +38,18 @@ func _process(delta: float) -> void:
 	
 	if velocity.y > 0:
 		$AnimatedSprite2D.flip_v = true
-	else:
-		$AnimatedSprite2D.flip_h = false
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 		
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	hide()
 	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+func start(pos: Vector2) -> void:
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
