@@ -32,9 +32,9 @@ func _on_message_timer_timeout() -> void:
 func set_visibility(see: bool) -> void:
 	if see:
 		$ScoreLabel.show()
-		$VirtualJoystickDX.show()
+		$VirtualJoystick.show()
 	elif !see:
 		$ScoreLabel.hide()
-		$VirtualJoystickDX.hide()
+		$VirtualJoystick.hide()
 	else:
 		print(see)
