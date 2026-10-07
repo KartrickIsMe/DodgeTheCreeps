@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://c5ufr3s77k5j4" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://bwyq58oodlw1n" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="Script" uid="uid://dv7x87txkcjm1" path="res://addons/virtual_joystick_DX/vjdx_core_script.gd" id="3_8sq4i"]
 
 [node name="HUD" type="CanvasLayer" unique_id=465316419]
 script = ExtResource("1_64ctp")
@@ -56,6 +57,34 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="." unique_id=1240267529]
 wait_time = 2.0
 one_shot = true
+
+[node name="VirtualJoystickDX" type="Control" parent="." unique_id=15990581]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -400.0
+offset_right = 213.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(213, 200)
+mouse_filter = 2
+script = ExtResource("3_8sq4i")
+controller_style = 1
+dpad_radius = 106.0
+"Joystick Mode" = null
+action_left = &"move_left"
+action_right = &"move_right"
+action_up = &"move_up"
+action_down = &"move_down"
+use_active_region = false
+region_w = 480.0
+"Colors - Joystick" = null
+"Textures - Joystick" = null
+metadata/_custom_type_script = "uid://dv7x87txkcjm1"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

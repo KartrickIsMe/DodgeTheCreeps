@@ -33,6 +33,10 @@ window/emulate_touch_from_mouse=false
 
 project/assembly_name="DodgeTheCreeps"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/virtual_joystick_DX/plugin.cfg", "res://addons/virtual_joystick_cf/plugin.cfg")
+
 [input]
 
 move_right={

@@ -11,6 +11,8 @@ func game_over() -> void:
 	$MobTimer.stop()
 	$HUD.show_game_over()
 
+	$HUD.show_message("Score : " + str(score))
+
 func new_game() -> void:
 	score = 0
 	$Player.start($StartPosition.position)

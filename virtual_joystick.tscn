@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://daogyj1xep7m1"]
-
-[node name="VirtualJoystick" type="VirtualJoystick" unique_id=1175784688]
-offset_right = 40.0
-offset_bottom = 40.0
